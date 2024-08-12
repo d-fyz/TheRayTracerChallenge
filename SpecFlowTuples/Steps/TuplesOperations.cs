@@ -98,4 +98,37 @@ public class TuplesOperations
         Assert.AreEqual(cross.y, y);
         Assert.AreEqual(cross.z, z);
     }
+
+    [Given(@"c(.*) ← color\((.*), (.*), (.*)\)")]
+    public void GivenCColor(int n, float r, float g, float b)
+    {
+        _tuples[n] = RTCTuple.Color(r, g, b);
+    }
+
+    [Then(@"c(.*) \+ c(.*) = color\((.*), (.*), (.*)\)")]
+    public void ThenCPlusCColor(int n1, int n2, float r, float g, float b)
+    {
+        var sum = _tuples[n1] + _tuples[n2];
+        Assert.IsTrue(MathUtils.Approximately(sum.r, r));
+        Assert.IsTrue(MathUtils.Approximately(sum.g, g));
+        Assert.IsTrue(MathUtils.Approximately(sum.b, b));
+    }
+
+    [Then(@"c(.*) - c(.*) = color\((.*), (.*), (.*)\)")]
+    public void ThenCMinusCColor(int n1, int n2, float r, float g, float b)
+    {
+        var diff = _tuples[n1] - _tuples[n2];
+        Assert.IsTrue(MathUtils.Approximately(diff.r, r));
+        Assert.IsTrue(MathUtils.Approximately(diff.g, g));
+        Assert.IsTrue(MathUtils.Approximately(diff.b, b));
+    }
+
+    [Then(@"c(.*) \* c(.*) = color\((.*), (.*), (.*)\)")]
+    public void ThenCMulCColor(int n1, int n2, float r, float g, float b)
+    {
+        var prod = _tuples[n1] * _tuples[n2];
+        Assert.IsTrue(MathUtils.Approximately(prod.r, r));
+        Assert.IsTrue(MathUtils.Approximately(prod.g, g));
+        Assert.IsTrue(MathUtils.Approximately(prod.b, b));
+    }
 }

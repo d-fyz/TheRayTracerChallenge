@@ -7,6 +7,7 @@ namespace SpecFlowTuples.Steps;
 public class TuplesSteps
 {
     private RTCTuple _a;
+    private RTCTuple _c;
     
     [Given(@"a ← tuple\((.*), (.*), (.*), (.*)\)")]
     public void GivenATuple(float x, float y, float z, float w)
@@ -58,5 +59,38 @@ public class TuplesSteps
         Assert.AreEqual(aDiv.y, y);
         Assert.AreEqual(aDiv.z, z);
         Assert.AreEqual(aDiv.w, w);
+    }
+
+    [Given(@"c ← color\((.*), (.*), (.*)\)")]
+    public void GivenCColor(float r, float g, float b)
+    {
+        _c = RTCTuple.Color(r, g, b);
+    }
+
+    [Then(@"c\.red = (.*)")]
+    public void ThenCRed(float r)
+    {
+        Assert.AreEqual(_c.r, r);
+    }
+    
+    [Then(@"c\.green = (.*)")]
+    public void ThenCGreen(float g)
+    {
+        Assert.AreEqual(_c.g, g);
+    }
+    
+    [Then(@"c\.blue = (.*)")]
+    public void ThenCBlue(float b)
+    {
+        Assert.AreEqual(_c.b, b);
+    }
+    
+    [Then(@"c \* (.*) = color\((.*), (.*), (.*)\)")]
+    public void ThenCColor(float mul, float r, float g, float b)
+    {
+        var cMul = _c * mul;
+        Assert.IsTrue(MathUtils.Approximately(cMul.r, r));
+        Assert.IsTrue(MathUtils.Approximately(cMul.g, g));
+        Assert.IsTrue(MathUtils.Approximately(cMul.b, b));
     }
 }
