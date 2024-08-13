@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuples", "Tuples\Tuples.csproj", "{C3815FCB-8811-49C5-8100-6DF2550F2698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowTuples", "SpecFlowTuples\SpecFlowTuples.csproj", "{8583F751-5F1A-492A-84C3-5090E18285A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuplesSpecFlow", "TuplesSpecFlow\TuplesSpecFlow.csproj", "{8583F751-5F1A-492A-84C3-5090E18285A0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canvas", "Canvas\Canvas.csproj", "{C42B6530-3BBF-423A-84DA-1447F763B6B3}"
 EndProject

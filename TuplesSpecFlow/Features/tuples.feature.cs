@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowTuples.Features
+namespace TuplesSpecFlow.Features
 {
     using TechTalk.SpecFlow;
     using System;
