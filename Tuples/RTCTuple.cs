@@ -15,7 +15,7 @@ public struct RTCTuple
     [FieldOffset(4)] public float g;
     [FieldOffset(8)] public float b;
     [FieldOffset(12)] public float a;
-    
+
     public RTCTuple() { }
 
     public RTCTuple(float x, float y, float z, float w)
